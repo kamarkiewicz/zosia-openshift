@@ -1,0 +1,175 @@
+{% extends "index.html"%}
+{% load i18n %}
+
+{% block css %}
+
+.lecture p, #lecture_abstract {
+	text-indent: 1.5em;
+	text-align: justify;
+	text-justify: inter-word;
+	text-align-last: left;
+	max-width: 45em;
+}
+strong.lecture_author + p { text-indent: 0; }
+#lecture_author { margin-bottom: 2px;}
+#lecture_abstract { margin-bottom: 5px;text-indent: 0;}
+#lecture_time { margin-bottom: 1em;}
+#note {
+    color: #444444;
+    font-family: 'Lucida Grande','Trebuchet MS',Verdana,Helvetica,Arial,sans-serif;
+    font-size: 11px;
+}
+
+article.even aside { margin-top: 8px; margin-right: 10px; float:left; }
+article.odd aside { margin-top: 8px; margin-left: 10px; float:right; }
+
+.author_description {font-style: italic; text-indent:0!important; }
+
+article { border-bottom: 1px solid #efefef;}
+
+    article { margin-bottom: 25px; min-height:160px}
+article.even div {margin-left: 130px;width: 550px;}
+article.odd div {margin-left: 10px;width: 550px;}
+article.normal p {max-width: 57em;}
+article.normal  {min-height: 0;}
+
+
+
+
+
+
+{% endblock css %}
+
+{% block content %}
+
+{% if messages %}
+    <ul class="messages">
+        {% for msg in messages %}
+        {% blocktrans %}<li>{{ msg }}</li>{% endblocktrans %}
+        {% endfor %}
+    </ul>
+{% endif %}
+{% if lecture_proposition_form.errors %}
+    <ul class="error_messages">
+        <li>{% trans "Repair errors below, please." %}</li>
+    </ul>
+{% endif %}
+
+{% comment %}
+
+<h2>{% trans "Invited talks" %}</h2>
+
+<article class="lecture_special">
+	<h3>Tytuł</h3>
+	<div id="lecture_author">Autor</div>
+	<div id="lecture_abstract">Abstrakt</div>
+</article>
+
+{% endcomment %}
+
+
+
+{% if sponslectures %}
+<h2>Wykłady sponsorów</h2>
+
+    {% include 'show_lecture.html' with lectures=sponslectures %}
+{% endif %}
+
+    {% if lectures %}
+    <h2>Wykłady uczestników</h2>
+     {% include "show_lecture.html" with lectures=lectures %}
+      {% else %}
+        <p>
+        {% trans "Nie opublikowaliśmy jeszcze wykładów." %}</label>
+        </p>
+    {% endif %}
+
+
+
+{% if not messages %}
+    {% if my_lectures %}
+        <h2>Twoje propozycje</h2>
+        <ul>
+        {% for lecture in my_lectures %}
+        <li>
+            <h3>{{ lecture.title }}</h3>
+            <p>{{ lecture.duration }}</p>
+            <p>{{ lecture.abstract }}</p>
+            <p>{{ lecture.info }}</p>
+        </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% if lecture_proposition_form %}
+<h2>{% trans "Suggest your lecture" %}</h2>
+    <form action="." method="post">{% csrf_token %}
+    <fieldset>
+    <legend>{% trans "Public info" %}</legend>
+        <ol>
+            <li>
+                {% if lecture_proposition_form.title.errors %}
+                <ul class="errorlist">
+                {% for error in lecture_proposition_form.title.errors %}
+                    <li>{{error|escape}}</li>
+                {% endfor %}
+                </ul>
+                {% endif %}
+            <label for="id_title">{% trans "Title" %}</label>
+            {{ lecture_proposition_form.title }}
+            </li>
+            <li>
+                {% if lecture_proposition_form.duration.errors %}
+                <ul class="errorlist">
+                {% for error in lecture_proposition_form.duration.errors %}
+                    <li>{{error|escape}}</li>
+                {% endfor %}
+                </ul>
+                {% endif %}
+            <label for="id_duration">{% trans "duraszatan" %}<span>{% trans "inminutes" %}</span></label>
+            {{ lecture_proposition_form.duration }}
+            </li>
+            <li>
+                {% if lecture_proposition_form.abstract.errors %}
+                <ul class="errorlist">
+                {% for error in lecture_proposition_form.abstract.errors %}
+                    <li>{{error|escape}}</li>
+                {% endfor %}
+                {% endif %}
+                <label for="id_abstract">{% trans "Abstract" %}<span>{% trans "(max chars)" %}</span></label>
+            {{ lecture_proposition_form.abstract }}
+            </li>
+        </ol>
+    </fieldset>
+    <fieldset>
+    <legend>{% trans "Additional information" %}</legend>
+        <ol>
+            <li>
+                {% if lecture_proposition_form.info.errors %}
+                <ul class="errorlist">
+                {% for error in lecture_proposition_form.info.errors %}
+                    <li>{{error|escape}}</li>
+                {% endfor %}
+                </ul>
+                {% endif %}
+                <label for="id_info">{% trans "Your suggestions, requests and comments intended for organizers and a lot more, what you always wanted to say these philistinic bastards with purulent knees" %}</label>
+                {{ lecture_proposition_form.info }}
+            </li>
+         </ol>
+    </fieldset>
+    <p><input type="submit" value="{% trans "Suggest" %}" /></p>
+    </form>
+
+{% endif %}
+{% endif %}
+
+{% endblock content %}
+
+{% block right_column %}
+{% if user.is_authenticated %}
+    <h2>{% trans "Yes we can" %}</h2>
+    <p>{% trans "Hurray" %}</p>
+{% else %}
+    <h2>{% trans "Ops, youre not logged in" %}</h2>
+    <p>{% trans "You have to be registered" %}</p>
+{% endif %}
+{% endblock right_column %}

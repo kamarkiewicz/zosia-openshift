@@ -1,0 +1,531 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyleft 2008
+# This file is distributed under the same license as the zapisy_zosia.
+# dreamer_ <dreamer.tan@gmail.com>, 2008.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-01 11:20+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: dreamer_ <dreamer.tan@gmail.com>\n"
+"Language-Team: noteam <13@37.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: common/forms.py:16
+msgid "Password too short"
+msgstr "Hasło powinno mieć przynajmniej 6 znaków długości"
+
+#: common/templates/bye.html:5
+msgid "bye"
+msgstr "Wylogowałeś się."
+
+#: common/templates/bye.html:7 common/templates/reactivation.html:7
+#: registration/templates/reactivation.html:7
+msgid "thanks for visit"
+msgstr "Dziękujemy za wizytę i do zobaczenia na ZOSI!"
+
+#: common/templates/login.html:11
+msgid "loggedalready"
+msgstr "Powtórne logowanie nie było konieczne ;)"
+
+#: common/templates/login.html:14
+msgid "loginfail"
+msgstr "Niestety, logowanie się nie powiodło."
+
+#: common/templates/login.html:16
+msgid "loginfailrecover"
+msgstr ""
+"Jeżeli już posiadasz swoje konto, możesz <a href='/"
+"password_reset/'>odzyskać</a> hasło."
+
+#: common/templates/login.html:18
+msgid "stranger"
+msgstr "Zapraszamy do zalogowania się."
+
+#: common/templates/login.html:33
+#, fuzzy
+msgid "email"
+msgstr ""
+"<p />Właśnie został wysłany do Ciebie mail aktywacyjny. <br>Kliknięcie "
+"zamieszczonego w nim odnośnika kończy proces rejestracji."
+
+#: common/templates/login.html:44
+#: registration/templates/change_preferences.html:71
+#: registration/templates/register_form.html:73 templates/index.html:53
+msgid "password"
+msgstr "hasło"
+
+#: common/templates/login.html:49
+msgid "loginbutton"
+msgstr "Zaloguj"
+
+#: common/templates/reactivation.html:5
+#: registration/templates/reactivation.html:5
+msgid "reactivate"
+msgstr "Użyty link aktywacyjny jest nieprawidłowy lub nieaktualny."
+
+#: lectures/views.py:28
+msgid "thankyou"
+msgstr "Dziękujemy! Twój wykład czeka na akceptację moderatora."
+
+#: lectures/templates/lectures.html:10
+#, python-format
+msgid "<li>%(msg)s</li>"
+msgstr ""
+
+#: lectures/templates/lectures.html:16
+#: registration/templates/change_preferences.html:55
+msgid "Repair errors below, please."
+msgstr "Prosimy o poprawienie wskazanych błędów."
+
+#: lectures/templates/lectures.html:20
+msgid "Invited talks"
+msgstr "Wykłady zaproszone"
+
+#: lectures/templates/lectures.html:20
+msgid "Lectures suggested"
+msgstr "Zaproponowane wykłady"
+
+#: lectures/templates/lectures.html:28
+msgid "None yet. You can be first!"
+msgstr "Jeszcze nikt nie zaproponował wykładu. Twój może być pierwszy!"
+
+#: lectures/templates/lectures.html:33
+msgid "Suggest your lecture"
+msgstr "Zaproponuj wykład"
+
+#: lectures/templates/lectures.html:36
+msgid "Public info"
+msgstr "Informacje wymagane"
+
+#: lectures/templates/lectures.html:46
+msgid "Title"
+msgstr "Tytuł"
+
+#: lectures/templates/lectures.html:57
+msgid "duraszatan"
+msgstr "Czas trwania"
+
+#: lectures/templates/lectures.html:57
+msgid "inminutes"
+msgstr " (w minutach)"
+
+#: lectures/templates/lectures.html:67
+msgid "Abstract"
+msgstr "Abstrakt"
+
+#: lectures/templates/lectures.html:67
+msgid "(max chars)"
+msgstr " (do 768 znaków)"
+
+#: lectures/templates/lectures.html:73
+msgid "Additional information"
+msgstr "Informacje dodatkowe"
+
+#: lectures/templates/lectures.html:83
+msgid ""
+"Your suggestions, requests and comments intended for organizers and a lot "
+"more, what you always wanted to say these philistinic bastards with purulent "
+"knees"
+msgstr ""
+"Uwagi, prośby i wszelkie komentarze dotyczące wykładu, którymi chciałbyś się "
+"podzielić z organizatorami oraz ew. proponowany czas trwania wykładu z uzasadnieniem."
+
+#: lectures/templates/lectures.html:88
+msgid "Suggest"
+msgstr "Zaproponuj wykład"
+
+#: lectures/templates/lectures.html:98
+msgid "Yes we can"
+msgstr "&nbsp;&nbsp;&nbsp;"
+
+#: lectures/templates/lectures.html:99
+msgid "Hurray"
+msgstr "&nbsp;&nbsp;&nbsp;"
+
+#: lectures/templates/lectures.html:101
+msgid "Ops, youre not logged in"
+msgstr "Ojej, nie jesteś zalogowany."
+
+#: lectures/templates/lectures.html:102
+msgid "You have to be registered"
+msgstr ""
+"Jeśli tylko się zarejestrujesz, będziesz mógł dodać swój wykład (and there "
+"will be a cake)."
+
+#: registration/forms.py:30
+msgid "You can buy meal only for adequate hotel night."
+msgstr "Posiłki są dostępne tylko na wykupione doby hotelowe."
+
+#: registration/forms.py:103 registration/forms.py:160
+msgid "At least one day should be selected."
+msgstr "Wybierz przynajmniej jeden nocleg."
+
+#: registration/models.py:22
+msgid "classic"
+msgstr "męska"
+
+#: registration/models.py:23
+msgid "women"
+msgstr "damska"
+
+#: registration/views.py:68
+msgid "activation_mail_title"
+msgstr "Mail aktywacyjny systemu zapisów na ZOSIę"
+
+#: registration/templates/change_preferences.html:27
+msgid "Paid was registered, see you soon!"
+msgstr "Zarejestrowaliśmy Twoją wpłatę, do zobaczenia na ZOSI!"
+
+#: registration/templates/change_preferences.html:60
+msgid "Preferences"
+msgstr "Ustawienia"
+
+#: registration/templates/change_preferences.html:64
+#: registration/templates/register_form.html:52
+msgid "authentication"
+msgstr "dane do uwierzytelniania"
+
+#: registration/templates/change_preferences.html:72
+msgid "change"
+msgstr "zmień"
+
+#: registration/templates/change_preferences.html:77
+#: registration/templates/register_form.html:90
+msgid "personal"
+msgstr "dane osobowe"
+
+#: registration/templates/change_preferences.html:77
+#: registration/templates/register_form.html:90
+msgid "room openning hour"
+msgstr "otwarcie zapisów na pokoje"
+
+#: registration/templates/change_preferences.html:80
+#: registration/templates/register_form.html:100
+msgid "name"
+msgstr "imię"
+
+#: registration/templates/change_preferences.html:80
+#: registration/templates/register_form.html:111
+msgid "surname"
+msgstr "nazwisko"
+
+#: registration/templates/register_form.html:119
+msgid "adding organizations only at registration"
+msgstr "Dodanie nowej organizacji jest możliwe tylko podczas rejestracji."
+
+#: registration/templates/change_preferences.html:93
+#: registration/templates/register_form.html:131
+msgid "organization"
+msgstr "organizacja"
+
+#: registration/templates/change_preferences.html:93
+#: registration/templates/register_form.html:131
+msgid "bus hour"
+msgstr "godzina autobusu"
+
+#: registration/templates/change_preferences.html:100
+#: registration/templates/register_form.html:141
+msgid "nights"
+msgstr "noclegi "
+
+#: registration/templates/change_preferences.html:110
+#: registration/templates/register_form.html:151
+msgid "night12"
+msgstr "dzień 1/dzień 2"
+
+#: registration/templates/change_preferences.html:113
+#: registration/templates/register_form.html:154
+msgid "night23"
+msgstr "dzień 2/dzień 3"
+
+#: registration/templates/change_preferences.html:116
+#: registration/templates/register_form.html:157
+msgid "night34"
+msgstr "dzień 3/dzień 4"
+
+#: registration/templates/change_preferences.html:121
+#: registration/templates/register_form.html:162
+msgid "dinners"
+msgstr "obiadokolacje"
+
+#: registration/templates/change_preferences.html:129
+#: registration/templates/register_form.html:170
+msgid "dinner1"
+msgstr "dzień 1"
+
+#: registration/templates/change_preferences.html:132
+#: registration/templates/register_form.html:173
+msgid "dinner2"
+msgstr "dzień 2"
+
+#: registration/templates/change_preferences.html:135
+#: registration/templates/register_form.html:176
+msgid "dinner3"
+msgstr "dzień 3"
+
+#: registration/templates/change_preferences.html:140
+#: registration/templates/register_form.html:181
+msgid "breakfasts"
+msgstr "śniadania"
+
+#: registration/templates/change_preferences.html:148
+#: registration/templates/register_form.html:189
+msgid "breakfast2"
+msgstr "dzień 2"
+
+#: registration/templates/change_preferences.html:151
+#: registration/templates/register_form.html:192
+msgid "breakfast3"
+msgstr "dzień 3"
+
+#: registration/templates/change_preferences.html:154
+#: registration/templates/register_form.html:195
+msgid "breakfast4"
+msgstr "dzień 4"
+
+#: registration/templates/change_preferences.html:159
+#: registration/templates/register_form.html:200
+msgid "others"
+msgstr "pozostałe"
+
+#: registration/templates/change_preferences.html:162
+#: registration/templates/register_form.html:203
+msgid "veggies"
+msgstr "Preferuję kuchnię wegetariańską."
+
+#: registration/templates/change_preferences.html:165
+#: registration/templates/register_form.html:206
+msgid "bussies"
+msgstr ""
+"Jestem zainteresowany zorganizowanym transportem autokarowym na trasie "
+"Wrocław - Karpacz - Wrocław"
+
+#: registration/templates/change_preferences.html:168
+#: registration/templates/register_form.html:209
+msgid "shirties"
+msgstr "rozmiar koszulki"
+
+#: registration/templates/change_preferences.html:171
+#: registration/templates/register_form.html:212
+msgid "shirt_type"
+msgstr "rodzaj koszulki"
+
+#: registration/templates/change_preferences.html:185
+msgid "Save"
+msgstr ""
+
+#: registration/templates/register_form.html:48
+#: registration/templatetags/time_block_helpers.py:14
+msgid "Registration"
+msgstr "Rejestracja"
+
+#: registration/templates/register_form.html:62
+#: registration/templates/register_form.html:73
+#: registration/templates/register_form.html:84
+#: registration/templates/register_form.html:100
+#: registration/templates/register_form.html:111
+#: registration/templates/register_form.html:124
+msgid "(required)"
+msgstr " (wymagane)"
+
+#: registration/templates/register_form.html:84
+msgid "repeatepas"
+msgstr "powtórz hasło"
+
+#: registration/templates/register_form.html:216
+msgid "register"
+msgstr "Zarejestruj"
+
+#: registration/templates/thanks.html:5
+msgid "tyouregister"
+msgstr "Rejestracja prawie ukończona."
+
+#: registration/templates/thanks.html:7
+msgid "checkmail"
+msgstr ""
+"<p />Właśnie został wysłany do Ciebie mail aktywacyjny. <br>Kliknięcie "
+"zamieszczonego w nim odnośnika kończy proces rejestracji."
+
+#: templates/change_password.html:14
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/change_password.html:33
+msgid "Password (again)"
+msgstr "Hasło (ponownie)"
+
+#: templates/change_password.html:38
+msgid "Change password"
+msgstr "Zmień hasło"
+
+#: templates/change_password_done.html:4
+msgid "passwordchanged"
+msgstr ""
+"Udało Ci się zmienić hasło.<br />Zanotuj je na żółtej karteczce "
+"samoprzylepnej i umieść na monitorze.<br /><img src='/static_media/images/"
+"kartka.jpg' width='200'/>"
+
+#: templates/index.html:32
+msgid "oh hai"
+msgstr "Witaj"
+
+#: templates/index.html:35
+msgid "Administration panel"
+msgstr "Panel administracyjny"
+
+#: templates/index.html:37
+msgid "Logout"
+msgstr "Wyloguj"
+
+#: templates/index.html:69
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/index.html:71
+msgid "Change preferences"
+msgstr "Moje preferencje"
+
+#: templates/index.html:77
+msgid "Lectures"
+msgstr "Wykłady"
+
+#: templates/index.html:111
+msgid "Except where otherwise noted, content on this site is licensed under a"
+msgstr ""
+"O ile nie stwierdzono inaczej, wszystkie materiały na stronie są dostępne na "
+"licencji"
+
+#: templates/index.html:112
+msgid "based on"
+msgstr "oparty na"
+
+#: templates/password_reset_complete.html:4
+#: templates/password_reset_confirm.html:4
+#: templates/password_reset_done.html:4 templates/password_reset_form.html:4
+msgid "Home"
+msgstr ""
+
+#: templates/password_reset_complete.html:4
+#: templates/password_reset_confirm.html:6
+#: templates/password_reset_done.html:4 templates/password_reset_form.html:4
+#: templates/password_reset_form.html:6 templates/password_reset_form.html:10
+msgid "Password reset"
+msgstr "Odzyskiwanie hasła"
+
+#: templates/password_reset_complete.html:6
+#: templates/password_reset_complete.html:10
+msgid "Password reset complete"
+msgstr "Odzyskiwanie hasła zakończone"
+
+#: templates/password_reset_complete.html:12
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr "Możesz się teraz zalogować."
+
+#: templates/password_reset_complete.html:14
+msgid "Log in"
+msgstr ""
+
+#: templates/password_reset_confirm.html:4
+msgid "Password reset confirmation"
+msgstr "la la la"
+
+#: templates/password_reset_confirm.html:12
+msgid "Enter new password"
+msgstr "Ustaw nowe hasło"
+
+#: templates/password_reset_confirm.html:14
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr "&nbsp;"
+
+#: templates/password_reset_confirm.html:18
+msgid "New password:"
+msgstr "hasło"
+
+#: templates/password_reset_confirm.html:20
+msgid "Confirm password:"
+msgstr "powtórz hasło"
+
+#: templates/password_reset_confirm.html:21
+msgid "Change my password"
+msgstr "Ustaw hasło"
+
+#: templates/password_reset_confirm.html:26
+msgid "Password reset unsuccessful"
+msgstr "Nie udało się odzyskać hasła"
+
+#: templates/password_reset_confirm.html:28
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+"Link do odzyskiwania hasła był niepoprawny, być może dlatego, że został już "
+"raz użyty. W razie potrzeby powtórz całą procedurę. "
+
+#: templates/password_reset_done.html:6 templates/password_reset_done.html:10
+msgid "Password reset successful"
+msgstr "Odzyskiwanie hasła w toku"
+
+#: templates/password_reset_done.html:12
+msgid ""
+"We've e-mailed you instructions for setting your password to the e-mail "
+"address you submitted. You should be receiving it shortly."
+msgstr ""
+
+#: templates/password_reset_email.html:2
+#: templates/registration/password_reset_email.html:3
+msgid "You're receiving this e-mail because you requested a password reset"
+msgstr ""
+
+#: templates/password_reset_email.html:3
+#: templates/registration/password_reset_email.html:4
+#, python-format
+msgid "for your user account at %(site_name)s"
+msgstr ""
+
+#: templates/password_reset_email.html:5
+#: templates/registration/password_reset_email.html:6
+msgid "Please go to the following page and choose a new password:"
+msgstr "Kliknij w poniższy link i wybierz nowe hasło."
+
+#: templates/password_reset_email.html:9
+#: templates/registration/password_reset_email.html:10
+msgid "Thanks for using our site!"
+msgstr "Dziękujemy za korzystanie z naszego systemu!"
+
+#: templates/password_reset_email.html:11
+#: templates/registration/password_reset_email.html:12
+#, python-format
+msgid "The %(site_name)s team"
+msgstr ""
+
+#: templates/password_reset_form.html:12
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions for setting a new one."
+msgstr ""
+"Zapomniałeś hasła? Podaj swój adres e-mail, a pomożemy Ci ustawić nowe."
+
+#: templates/password_reset_form.html:16
+msgid "E-mail address:"
+msgstr "Adres e-mail:"
+
+#: templates/password_reset_form.html:16
+msgid "Reset my password"
+msgstr "Odzyskaj hasło"
+
+#: templates/admin/base_site.html:4
+msgid "Django site admin"
+msgstr ""
+
+#~ msgid "add"
+#~ msgstr "Dodaj"

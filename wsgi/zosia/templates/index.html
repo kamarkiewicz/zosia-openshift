@@ -1,0 +1,135 @@
+<!doctype html> 
+{% load i18n %}
+{% load cache %}
+{% load blurb_edit %}
+<html lang="pl">
+<head>
+    <title>ZOSIA 2015</title>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Language" content="pl" />
+<link href="/static_media/css/layout_2col_right_13.css" rel="stylesheet" type="text/css"/>
+<link href="/static_media/css/zosia.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 7]>
+<link href="/static_media/css/patches/patch_2col_right_13.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="RSS"
+      href="/feeds/blog/"/>
+<link rel="icon" href="/static_media/images/favicon.png">
+<script type="text/javascript">
+window.onload=function(){ AddFillerLink("col1_content","col3_content"); }
+</script>
+<script type="text/javascript">
+{% block javascript %}{% endblock %}
+</script>
+<style type="text/css">
+<!--
+{% block css %}{% endblock %}
+-->
+</style>
+{% block superextra %}{% endblock %}
+</head>
+<body onload='{% block onload%}{% endblock %}'>
+<div id="wrapper">
+<div id="page_margins">
+	<div id="page">
+		<div id="header">
+			<div id="topnav">
+                {% if user.is_authenticated %}
+                    {% trans "oh hai" %}, {{ user.first_name }} {{ user.last_name}} |
+                    {# <a href="/password_change/">{% trans "Change password" %}</a> | #}
+                    {% if user.is_staff %}
+                    <a href="/admin/">{% trans "Administration panel" %}</a> |
+                    {% endif %}
+                    <a href="/logout/">{% trans "Logout" %}</a>
+                {% else %}
+                {% if login_form %}
+                    <form action="/login/" method="post" id="login_form">
+                    <fieldset>
+                    {% if login_form.email.errors %}
+                        <ul class="errorlist">
+                        {% for error in login_form.email.errors %}<li>{{error|escape}}</li>{% endfor %}
+                        </ul>
+                    {% endif %}
+                    <label for="id_login_email">e-mail</label> {{ login_form.email }}
+                    {% if form.password.errors %}
+                        <ul class="errorlist">
+                        {% for error in form.password.errors %}<li>{{error|escape}}</li>{% endfor %}
+                        </ul>
+                    {% endif %}
+                    <label for="id_login_password">{% trans "password" %}</label> {{ login_form.password }}
+                    <input type="submit" value="login" />
+                    </fieldset>
+                    </form>
+                    <div class="main_page_password_reset">
+                    <a href="/password_reset">zapomniałem hasła</a>
+                    </div>
+                    {% endif %} {# login_form #}
+                    {# <a href="/register/">{% trans "Register" %}</a> #}
+                {% endif %}
+            </div>
+            <a href="/blog/"><img src="/static_media/images/logo_zosi_shadow.png" alt="ZOSIA" /></a>
+			<span>Zimowy Obóz Studentów Informatyki A &#8226; 2015</span></div>
+		<!-- begin: main navigation #nav -->
+		<div id="nav"> <a id="navigation" name="navigation"></a>
+			<!-- skiplink anchor: navigation -->
+			<div id="nav_main">
+				<ul>
+                    <li {% if title == "Blog" %}id="current"{% endif %}><a href="/blog/">Blog</a></li>
+                    {% load time_block_helpers %}
+                    {% if user.is_authenticated %}
+                        <li {% if title == "Change preferences" %}id="current"{% endif %}><a href="/change_preferences/">Preferencje</a></li>
+                        <li {% if title == "Polls" %}id="current"{% endif %}><a href="{% url 'polls:main' %}">Ankiety</a></li>
+                    {% else %}
+                        <li {% if title == "Registration" %}id="current"{% endif %}>
+                            <a href="/register/">Rejestracja</a></li>
+                        </li>
+                    {% endif %}
+                    <li {% if title == "Lectures" %}id="current"{% endif %}><a href="/lectures/">Wykłady</a></li>
+					<li {% if title == "Program" %}id="current"{% endif %}><a href="/program/">Program</a></li>
+                    {% if user.has_opened_records %}
+                        <li {% if title == 'Room' %}id="current"{% endif %}>
+                            <a href="/rooms/">Zapisy na pokoje</a></li>
+                        </li>
+                    {% endif %}
+				</ul>
+			</div>
+		</div>
+		<!-- end: main navigation -->
+		<!-- begin: main content area #main -->
+		<div id="main">
+			<!-- begin: #col1 - first float column -->
+			<div id="col1">
+                {% if messages_list %} <!-- TODO -->
+                <ul>
+                    <li>The lecture &quot;Lecture object&quot; was added successfully.</li>
+                </ul>
+                {% endif %}
+				<div id="col1_content" class="clearfix"> <a id="content" name="content"></a>
+					<!-- skiplink anchor: Content -->
+                    {% block content %}page content{% endblock %}
+				</div>
+			</div>
+			<!-- end: #col1 -->
+			<!-- begin: #col3 static column -->
+			<div id="col3">
+				<div id="col3_content" class="clearfix">
+                    {% block right_column %}{% endblock %}
+				</div>
+				<div id="ie_clearing">&nbsp;</div>
+				<!-- End: IE Column Clearing -->
+            </div>
+			<!-- end: #col3 -->
+		</div>
+		<!-- end: #main -->
+		<!-- begin: #footer -->
+        <div id="footer">
+            <a rel="license" href="http://creativecommons.org/licenses/by/2.5/pl/"><img alt="Creative Commons License" style="border-width:0; margin: 0.2em 0.4em 0 0; float:left;" src="http://i.creativecommons.org/l/by/2.5/pl/88x31.png" /></a>{% trans "Except where otherwise noted, content on this site is licensed under a" %} <a rel="license" href="http://creativecommons.org/licenses/by/2.5/pl/">Creative Commons Attribution 2.5 Poland</a>.<br/>
+            copyleft Koło Studentów Informatyki UWr | <a href="https://bitbucket.org/jablonski/zapisy_zosia">src</a> | Layout {% trans "based on" %} <a href="http://www.yaml.de/">YAML</a>
+        </div>
+		<!-- end: #footer -->
+	</div>
+</div>
+</div><!-- wrapper -->
+</body>
+</html>

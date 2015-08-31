@@ -1,0 +1,14 @@
+Dziękujemy za rejestrację w systemie zapisów na ZOSIę.
+
+Aby aktywować konto oraz zobaczyć dane potrzebne do wpłaty
+kliknij w poniższy link:
+
+http://{{site_name}}/register/activate/{{uid}}-{{token}}/
+
+Przypominamy, że termin wpłat upływa {{payment_deadline|date:"d M Y"}}.
+
+
+--
+Organizatorzy
+Zimowego Obozu Studentów Informatyki ZOSIA
+ksi@cs.uni.wroc.pl
